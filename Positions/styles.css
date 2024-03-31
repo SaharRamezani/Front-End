@@ -1,12 +1,12 @@
-/* relative
+relative
 p {
     position: relative;
     top: 48px;
     right: 48px;
     background-color: yellow;
-} */
+}
 
-/* absolete
+/* absolute
 .container {
     position: relative;
 }
