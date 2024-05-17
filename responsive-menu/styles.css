@@ -24,22 +24,33 @@ ul {
   all: initial;
   list-style: none;
   display: flex;
+  flex-direction: column;
 }
-
-/*
-Add these styles to .hover element with after pseudo-class in mobile mode
-border-radius: 5px 0 0 5px;
-height: 40px;
-width: 5px;
-background-color: #fff;
-
-Add these styles to li in desktop mode
-width: 100px;
-justify-content: center;
-padding-right: 0;
-
-Add these styles to .hover element with after pseudo-class in desktop mode
-border-radius: 5px 5px 0 0;
-height: 3px;
-*/
-
+.hover::after {
+  border-radius: 5px 0 0 5px;
+  height: 40px;
+  width: 5px;
+  right: 0px;
+  left: 0px;
+  background-color: #fff;
+  position: absolute;
+  content: "";
+}
+@media screen and (min-width: 576px) {
+  li {
+    width: 100px;
+    justify-content: center;
+    padding-right: 0;
+  }
+  ul {
+    flex-direction: row;
+  }
+  .hover::after {
+    border-radius: 5px 5px 0 0;
+    height: 3px;
+    left: 28px;
+    right: 28px;
+    bottom: 0px;
+    width: unset;
+  }
+}
